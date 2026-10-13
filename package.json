@@ -1,0 +1,61 @@
+{
+  "name": "otpwave-desktop",
+  "productName": "OTPWave",
+  "version": "1.0.0",
+  "description": "OTPWave desktop app: virtual numbers and verification codes, with instant code notifications.",
+  "main": "main.js",
+  "author": "OTPWave",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^38.8.6",
+    "electron-builder": "^26.15.3"
+  },
+  "allowScripts": {
+    "electron@38.8.6": true
+  },
+  "build": {
+    "appId": "com.otpwave.desktop",
+    "productName": "OTPWave",
+    "copyright": "\u00a9 2026 OTPWave",
+    "files": [
+      "main.js",
+      "preload.js",
+      "assets/**",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "OTPWave-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "OTPWave",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false
+    },
+    "compression": "maximum"
+  }
+}
