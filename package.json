@@ -42,7 +42,7 @@
         }
       ],
       "icon": "build/icon.ico",
-      "artifactName": "OTPWave-Setup-${version}.${ext}"
+      "artifactName": "OTPWave-Setup.${ext}"
     },
     "nsis": {
       "oneClick": false,
@@ -57,5 +57,9 @@
       "deleteAppDataOnUninstall": false
     },
     "compression": "maximum"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aniezesidney6-source/otpwave-desktop.git"
   }
 }
